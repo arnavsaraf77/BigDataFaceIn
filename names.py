@@ -1,24 +1,3 @@
-from faker import Faker
-import random
-import pandas as pd
-
-# Create a Faker instance
-fake = Faker()
-df = pd.DataFrame(columns=["ID","Name"])
-
-# Generate a list of 200,000 unique names and ID's
-unique_names = set()
-id_list = set()
-
-while len(unique_names) < 200000:
-    id_list.add(len(unique_names))
-    unique_names.add(fake.name())
-
-# Convert the set of unique names to a list
-names_list = list(unique_names) 
-id_lst = list(id_list)
-
-df["ID"] = id_lst
-df["Name"] = names_list
-
-df.to_csv("Data/names.csv", index = False)
+version https://git-lfs.github.com/spec/v1
+oid sha256:0a8bed99ae394e2857567a750c2c3f9c963ed855cc2914e8ba64753e7432237a
+size 522
